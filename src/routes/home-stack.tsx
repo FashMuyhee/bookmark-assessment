@@ -1,6 +1,6 @@
+import {HomeScreen} from '@views';
 import {HomeStackScreens} from './type';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomeScreen} from './tab';
 
 const Stack = createStackNavigator<HomeStackScreens>();
 
