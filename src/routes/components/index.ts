@@ -1,1 +1,2 @@
-export * from './TabIcons'
+export * from './TabIcons';
+export * from './TabBar';
