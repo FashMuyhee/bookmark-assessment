@@ -10,7 +10,7 @@ export const TabBar = ({state, descriptors, navigation}: BottomTabBarProps) => {
       style={{paddingBottom: IS_ANDROID ? 0 : 10, height: 80, width: '100%', backgroundColor: COLORS.WHITE, paddingHorizontal: 30}}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
-        const label = route.name;
+        const label = options.tabBarLabel as string;
 
         const isFocused = state.index === index;
 
