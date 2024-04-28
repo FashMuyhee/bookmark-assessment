@@ -1,7 +1,7 @@
 import {StyleSheet, TextInput} from 'react-native';
 import React from 'react';
 import {StackView, FilterIcon, SearchIcon, IconButton, CenterView} from '@components';
-import {BORDER_RADIUS, COLORS, FONTS, SCREEN_PADDING, SCREEN_WIDTH} from '@utils';
+import {BORDER_RADIUS, COLORS, FONTS} from '@utils';
 
 export const Searchbar = () => {
   return (
@@ -24,8 +24,7 @@ const styles = StyleSheet.create({
     columnGap: 10,
     backgroundColor: COLORS.OFF_WHITE,
     borderRadius: BORDER_RADIUS,
-    width: SCREEN_WIDTH - SCREEN_PADDING * 2,
-    alignSelf: 'center',
+    width: '100%',
     marginTop: 20,
   },
   input: {

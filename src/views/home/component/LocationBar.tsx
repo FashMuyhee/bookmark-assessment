@@ -1,7 +1,7 @@
 import {StyleSheet, TextInput} from 'react-native';
 import React from 'react';
 import {StackView, IconButton, CenterView, GpsIcon, LocationIcon} from '@components';
-import {BORDER_RADIUS, COLORS, FONTS, SCREEN_PADDING, SCREEN_WIDTH} from '@utils';
+import {BORDER_RADIUS, COLORS, FONTS} from '@utils';
 
 export const LocationBar = () => {
   return (
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     height: 50,
     columnGap: 10,
-    width: SCREEN_WIDTH - SCREEN_PADDING * 2,
+    width: '100%',
     alignSelf: 'center',
     marginTop: 9,
   },
