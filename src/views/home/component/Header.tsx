@@ -2,7 +2,7 @@ import {View, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {Text, StackView, IconButton, BellIcon, BookmarkIcon} from '@components';
 import {usGetPartOfDay} from '@hooks';
-import {COLORS} from '@utils';
+import {COLORS, SCREEN_PADDING} from '@utils';
 import avatar from '@assets/images/avatar.png';
 import handWave from '@assets/images/hand-wave.png';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
@@ -35,7 +35,7 @@ export const Header = () => {
 const styles = StyleSheet.create({
   container: {
     height: 50,
-    paddingHorizontal: 10,
+    paddingHorizontal: SCREEN_PADDING,
     columnGap: 10,
   },
   avatar: {
