@@ -13,3 +13,5 @@ export * from './movers';
 export * from './plumbing';
 export * from './hair-salon';
 export * from './broken-star';
+export * from './arrow-back';
+export * from './circle-more';
