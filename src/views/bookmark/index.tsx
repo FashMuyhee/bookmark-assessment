@@ -4,11 +4,10 @@ import {COLORS, SCREEN_HEIGHT, SCREEN_PADDING, Service} from '@utils';
 import {useBookmark} from '@hooks';
 import {ServiceCard, ServiceCategoryList} from '@views/home/component';
 import {FlatList, LayoutAnimation, ListRenderItemInfo} from 'react-native';
-import {Header} from './components';
+import {EmptyState, Header} from './components';
 
-type Props = {};
 
-export const BookmarkScreen = (props: Props) => {
+export const BookmarkScreen = () => {
   const {bookmarks, onToggleBookmark} = useBookmark();
   const [category, setCategory] = React.useState('all');
 
@@ -20,12 +19,13 @@ export const BookmarkScreen = (props: Props) => {
   return (
     <ScreenWrapper padding={0} bg={COLORS.WHITE} style={{height: SCREEN_HEIGHT - 50}}>
       <Header />
-      <ServiceCategoryList category={category} onChangeCategory={setCategory} />
+      {bookmarks.length > 0 && <ServiceCategoryList category={category} onChangeCategory={setCategory} />}
       <FlatList
         contentContainerStyle={{paddingHorizontal: SCREEN_PADDING}}
         data={bookmarks}
         renderItem={renderBookmarks}
         keyExtractor={item => item.id}
+        ListEmptyComponent={<EmptyState />}
       />
     </ScreenWrapper>
   );
