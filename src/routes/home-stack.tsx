@@ -1,4 +1,4 @@
-import {HomeScreen} from '@views';
+import {BookmarkScreen, HomeScreen} from '@views';
 import {HomeStackScreens} from './type';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -8,7 +8,7 @@ export const HomeStack = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="home" component={HomeScreen} />
-      <Stack.Screen name="bookmarks" component={HomeScreen} />
+      <Stack.Screen name="bookmarks" component={BookmarkScreen} />
     </Stack.Navigator>
   );
 };
