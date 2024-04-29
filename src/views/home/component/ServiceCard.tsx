@@ -3,6 +3,7 @@ import React from 'react';
 import {BORDER_RADIUS, COLORS, figureFormat} from '@utils';
 import {BookmarkIcon, BrokenStarIcon, IconButton, StackView, Text} from '@components';
 import serviceImage from '@assets/images/service.png';
+import {useBookmark} from '@hooks';
 
 type Props = {
   category: string;
@@ -15,6 +16,8 @@ type Props = {
 };
 
 const BaseElement = ({category, providerName, rating, reviews, serviceCharge, id, onToggleBookmark}: Props) => {
+  const {isBookmarked} = useBookmark();
+
   return (
     <Pressable style={styles.card}>
       <View style={{width: 100, height: 100, borderRadius: BORDER_RADIUS}}>
@@ -23,7 +26,7 @@ const BaseElement = ({category, providerName, rating, reviews, serviceCharge, id
       <View style={{flex: 1, height: '100%', rowGap: 10, justifyContent: 'space-evenly'}}>
         <StackView align="center" justify="space-between">
           <Text>{providerName}</Text>
-          <IconButton size={25} icon={<BookmarkIcon />} onPress={() => onToggleBookmark(id)} />
+          <IconButton size={40} icon={<BookmarkIcon active={isBookmarked(id)} />} onPress={() => onToggleBookmark(id)} />
         </StackView>
         <Text textTransform="capitalize" isBold fontSize={16}>
           {category}
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
   card: {
     padding: 15,
     marginBottom: 20,
-    height: 130,
+    height: 135,
     width: '100%',
     borderRadius: BORDER_RADIUS * 2,
     backgroundColor: COLORS.WHITE,

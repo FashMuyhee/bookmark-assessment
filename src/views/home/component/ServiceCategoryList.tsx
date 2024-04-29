@@ -1,7 +1,7 @@
 import {Text} from '@components';
-import {categories, COLORS} from '@utils';
+import {categories, COLORS, SCREEN_PADDING} from '@utils';
 import React from 'react';
-import {Pressable, ScrollView, StyleSheet} from 'react-native';
+import {Pressable, ScrollView, StyleSheet, View} from 'react-native';
 
 type Props = {
   onChangeCategory: (category: string) => void;
@@ -28,22 +28,20 @@ const CategoryChip = ({category, onPress, selected}: CategoryChipProps) => {
 
 export const ServiceCategoryList = ({category, onChangeCategory}: Props) => {
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      style={{marginBottom: 20, height: 40}}
-      contentContainerStyle={{alignItems: 'center'}}>
-      {[{category: 'all'}, ...categories].map(c => (
-        <CategoryChip key={c.category} category={c.category} onPress={c => onChangeCategory(c)} selected={category == c.category} />
-      ))}
-    </ScrollView>
+    <View style={{marginBottom: 15, height: 40}}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{alignItems: 'center'}}>
+        {[{category: 'all'}, ...categories].map(c => (
+          <CategoryChip key={c.category} category={c.category} onPress={c => onChangeCategory(c)} selected={category == c.category} />
+        ))}
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   chip: {
     borderColor: COLORS.GREY,
-    marginLeft: 10,
+    marginLeft: SCREEN_PADDING,
     height: 35,
     alignItems: 'center',
     justifyContent: 'center',

@@ -6,3 +6,4 @@ export * from './Categories';
 export * from './RecommendedServices';
 export * from './ServiceCard';
 export * from './DiscoveredServices';
+export * from './ServiceCategoryList';
