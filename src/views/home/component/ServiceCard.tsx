@@ -1,7 +1,8 @@
-import {View, Pressable, StyleSheet} from 'react-native';
+import {View, Pressable, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {BORDER_RADIUS, COLORS, figureFormat} from '@utils';
 import {BookmarkIcon, BrokenStarIcon, IconButton, StackView, Text} from '@components';
+import serviceImage from '@assets/images/service.png';
 
 type Props = {
   category: string;
@@ -9,18 +10,22 @@ type Props = {
   rating: number;
   serviceCharge: number;
   reviews: number;
+  id: string;
+  onToggleBookmark: (id: string) => void;
 };
 
-const BaseElement = ({category, providerName, rating, reviews, serviceCharge}: Props) => {
+const BaseElement = ({category, providerName, rating, reviews, serviceCharge, id, onToggleBookmark}: Props) => {
   return (
     <Pressable style={styles.card}>
-      <View style={{width: '35%', height: '100%', borderRadius: BORDER_RADIUS, borderWidth: 1}} />
+      <View style={{width: 100, height: 100, borderRadius: BORDER_RADIUS}}>
+        <Image source={serviceImage} style={{height: '100%', width: '100%', resizeMode: 'contain'}} />
+      </View>
       <View style={{flex: 1, height: '100%', rowGap: 10, justifyContent: 'space-evenly'}}>
         <StackView align="center" justify="space-between">
           <Text>{providerName}</Text>
-          <IconButton size={25} icon={<BookmarkIcon />} />
+          <IconButton size={25} icon={<BookmarkIcon />} onPress={() => onToggleBookmark(id)} />
         </StackView>
-        <Text isBold fontSize={16}>
+        <Text textTransform="capitalize" isBold fontSize={16}>
           {category}
         </Text>
         <Text isBold fontSize={16}>
@@ -49,7 +54,7 @@ const styles = StyleSheet.create({
   card: {
     padding: 15,
     marginBottom: 20,
-    height: 150,
+    height: 130,
     width: '100%',
     borderRadius: BORDER_RADIUS * 2,
     backgroundColor: COLORS.WHITE,
