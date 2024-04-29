@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     columnGap: 10,
     width: '100%',
     alignSelf: 'center',
-    marginTop: 9,
+    marginTop: '3%',
   },
   flatStyle: {
     backgroundColor: COLORS.OFF_WHITE,
