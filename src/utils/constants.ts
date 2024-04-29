@@ -22,7 +22,7 @@ export const COLORS = {
 
 export const IS_ANDROID = Platform.OS == 'android';
 
-export const SCREEN_PADDING = 15;
+export const SCREEN_PADDING = 20;
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
 export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const BORDER_RADIUS = 8;

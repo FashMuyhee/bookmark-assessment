@@ -11,7 +11,16 @@ export const categories = [
   {category: "men's salon", icon: HairSalonIcon},
 ];
 
-export const recommendedServices = [
+export type Service = {
+  category: string;
+  providerName: string;
+  rating: number;
+  serviceCharge: number;
+  reviews: number;
+  id: string;
+};
+
+export const recommendedServices: Service[] = [
   {
     category: 'appliance',
     providerName: 'Reliable Electric Co.',
@@ -38,7 +47,7 @@ export const recommendedServices = [
   },
 ];
 
-export const discoveredServices = [
+export const discoveredServices: Service[] = [
   {
     category: 'movers',
     providerName: 'Quicker',
