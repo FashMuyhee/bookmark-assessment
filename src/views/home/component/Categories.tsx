@@ -2,7 +2,7 @@ import {Pressable, View} from 'react-native';
 import React from 'react';
 import {SectionTitle} from './SectionTitle';
 import {CenterView, StackView, Text} from '@components';
-import {categories, COLORS} from '@utils';
+import {categories, COLORS, SCREEN_PADDING} from '@utils';
 
 type CategoryProps = {
   icon: React.ReactNode;
@@ -26,7 +26,7 @@ const Category = ({icon, title}: CategoryProps) => (
 
 export const Categories = () => {
   return (
-    <View>
+    <View style={{marginHorizontal: SCREEN_PADDING}}>
       <SectionTitle title="Categories" />
       {/* LIST */}
       {categories && (
