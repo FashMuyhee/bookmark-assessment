@@ -1,6 +1,7 @@
 import React, {createContext} from 'react';
 import {IBookmarkContext} from './type';
 import {discoveredServices, recommendedServices, Service} from '@utils';
+import Toast from 'react-native-toast-message';
 
 const initialState: IBookmarkContext = {
   bookmarks: [],
@@ -16,10 +17,12 @@ export const BookmarkContextProvider = ({children}: {children: React.ReactNode})
   const onToggleBookmark = (id: string) => {
     if (isBookmarked(id)) {
       setBookmarks(bookmarks.filter(bookmark => bookmark.id !== id));
+      Toast.show({text1: 'Removed from bookmark', type: 'success'});
     } else {
       const item = [...recommendedServices, ...discoveredServices].find(item => item.id === id);
       if (item) {
         setBookmarks([...bookmarks, item]);
+        Toast.show({text1: 'Bookmarked', type: 'success'});
       }
     }
   };
