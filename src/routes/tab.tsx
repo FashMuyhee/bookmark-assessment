@@ -3,12 +3,19 @@ import {BottomTabScenes} from './type';
 import {ScreenWrapper, Text} from '@components';
 import {BookingIcon, HomeIcon, MessagingIcon, ProfileIcon, TabBar} from './components';
 import {HomeStack} from './home-stack';
+import React from 'react';
+import {RouteProp} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator<BottomTabScenes>();
+type Props = {
+  route: RouteProp<BottomTabScenes>;
+};
 
-export const HomeScreen = () => (
+const PlaceholderScreen = ({route}: Props) => (
   <ScreenWrapper>
-    <Text>Am</Text>
+    <Text fontSize={30} isBold textTransform="capitalize" style={{marginTop: 20}}>
+      {route.name}
+    </Text>
   </ScreenWrapper>
 );
 
@@ -18,17 +25,17 @@ export const BottomsTabs = () => {
       <Tab.Screen name="home_stack" component={HomeStack} options={{tabBarLabel: 'Home', tabBarIcon: ({focused}) => <HomeIcon active={focused} />}} />
       <Tab.Screen
         name="bookings"
-        component={HomeScreen}
+        component={PlaceholderScreen}
         options={{tabBarLabel: 'Bookings', tabBarIcon: ({focused}) => <BookingIcon active={focused} />}}
       />
       <Tab.Screen
         name="messages"
-        component={HomeScreen}
+        component={PlaceholderScreen}
         options={{tabBarLabel: 'Messages', tabBarIcon: ({focused}) => <MessagingIcon active={focused} />}}
       />
       <Tab.Screen
         name="profile"
-        component={HomeScreen}
+        component={PlaceholderScreen}
         options={{tabBarLabel: 'Profile', tabBarIcon: ({focused}) => <ProfileIcon active={focused} />}}
       />
     </Tab.Navigator>
