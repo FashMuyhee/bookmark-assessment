@@ -1,1 +1,2 @@
-export * from './useGetPartOfDay'
+export * from './useGetPartOfDay';
+export * from './useBookmark';
