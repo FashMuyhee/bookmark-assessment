@@ -18,7 +18,7 @@ export const EmptyState = () => {
           No Bookmarks.
         </Text>
         <Text color={COLORS.GREY} fontSize={15} textAlign="center">
-          You have no bookmarked any service, Check back later.
+          You have not bookmarked any service, Check back later.
         </Text>
       </CenterView>
     </CenterView>
