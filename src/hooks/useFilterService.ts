@@ -9,18 +9,18 @@ type Params = {
 const useFilterService = ({category, data}: Params) => {
   const [filtered, setFiltered] = useState(data);
 
-  const onFilter = () => {
+  const onFilter = React.useCallback(() => {
     if (category == 'all') {
       setFiltered(data);
       return;
     }
     const filtered = data.filter(item => item.category === category);
     setFiltered(filtered);
-  };
+  }, [category, data]);
 
   React.useEffect(() => {
     onFilter();
-  }, [category]);
+  }, [category, data]);
 
   return {filtered};
 };
