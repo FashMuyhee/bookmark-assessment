@@ -55,12 +55,12 @@ const SliderBanner = () => {
           resizeMode="cover">
           <View style={{width: '50%', marginTop: '9%', rowGap: 5}}>
             <Text color="white" isBold fontSize={30}>
-              {item.percent}%
+              {item.type}
             </Text>
             <Text color="white" isBold fontSize={18} textTransform="capitalize">
               {item.title}
             </Text>
-            <Text color="white" fontSize={11}>
+            <Text numberLines={2} color="white" fontSize={11}>
               {item.description}
             </Text>
           </View>

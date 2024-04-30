@@ -102,16 +102,16 @@ export const specialOffer = [
   {
     title: 'today special',
     description: 'Get discount for every order, only valid for today',
-    percent: '30',
+    type: '30%',
   },
   {
-    title: 'today special',
-    description: 'Get discount for every order, only valid for today',
-    percent: '30',
+    title: 'Free Shipping',
+    description: 'Enjoy free shipping on all orders over $50. Stock up on your favorites!',
+    type: '🚚',
   },
   {
-    title: 'today special',
-    description: 'Get discount for every order, only valid for today',
-    percent: '30',
+    title: 'Flash Sale',
+    description: 'An extra 15% off already discounted clearance items! Limited quantities available, hurry!',
+    type: '15%',
   },
 ];

@@ -15,5 +15,3 @@ export const SpecialOffers = (props: Props) => {
     </View>
   );
 };
-
-
