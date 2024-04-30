@@ -57,6 +57,22 @@ export const discoveredServices: Service[] = [
     id: 'quicker',
   },
   {
+    category: 'painting',
+    providerName: 'A&C Builders',
+    rating: 5.0,
+    serviceCharge: 30,
+    reviews: 75,
+    id: 'a&c-builders',
+  },
+  {
+    category: "men's salon",
+    providerName: "Harry's Cutz",
+    rating: 5.0,
+    serviceCharge: 30,
+    reviews: 75,
+    id: 'harry-cut',
+  },
+  {
     category: 'repairing',
     providerName: 'Fix-It Pete',
     rating: 4.2,

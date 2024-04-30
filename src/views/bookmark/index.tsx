@@ -5,11 +5,13 @@ import {useBookmark} from '@hooks';
 import {ServiceCard, ServiceCategoryList} from '@views/home/component';
 import {FlatList, LayoutAnimation, ListRenderItemInfo} from 'react-native';
 import {EmptyState, Header} from './components';
+import useFilterService from '@hooks/useFilterService';
 
 
 export const BookmarkScreen = () => {
   const {bookmarks, onToggleBookmark} = useBookmark();
   const [category, setCategory] = React.useState('all');
+  const {filtered} = useFilterService({data: bookmarks, category});
 
   const renderBookmarks = ({item}: ListRenderItemInfo<Service>) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
@@ -22,7 +24,7 @@ export const BookmarkScreen = () => {
       {bookmarks.length > 0 && <ServiceCategoryList category={category} onChangeCategory={setCategory} />}
       <FlatList
         contentContainerStyle={{paddingHorizontal: SCREEN_PADDING}}
-        data={bookmarks}
+        data={filtered}
         renderItem={renderBookmarks}
         keyExtractor={item => item.id}
         ListEmptyComponent={<EmptyState />}
