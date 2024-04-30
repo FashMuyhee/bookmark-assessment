@@ -1,7 +1,8 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import {SectionTitle} from './SectionTitle';
 import {SCREEN_PADDING} from '@utils';
+import SliderBanner from './SliderBanner';
 
 type Props = {};
 
@@ -10,15 +11,9 @@ export const SpecialOffers = (props: Props) => {
     <View style={{marginHorizontal: SCREEN_PADDING}}>
       <SectionTitle title="Special Offers" />
       {/* LIST */}
-      <View style={styles.banner}></View>
+      <SliderBanner />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  banner: {
-    height: 160,
-    borderRadius: 30,
-    backgroundColor: 'red',
-  },
-});
+

@@ -97,3 +97,21 @@ export const discoveredServices: Service[] = [
     id: 'byte-doctors',
   },
 ];
+
+export const specialOffer = [
+  {
+    title: 'today special',
+    description: 'Get discount for every order, only valid for today',
+    percent: '30',
+  },
+  {
+    title: 'today special',
+    description: 'Get discount for every order, only valid for today',
+    percent: '30',
+  },
+  {
+    title: 'today special',
+    description: 'Get discount for every order, only valid for today',
+    percent: '30',
+  },
+];
