@@ -86,7 +86,7 @@ const SliderBanner = () => {
         data={specialOffer}
         pagingEnabled
         horizontal
-        // ref={flatListRef}
+        ref={flatListRef}
         onScroll={Animated.event([{nativeEvent: {contentOffset: {x: scrollX}}}], {useNativeDriver: false})}
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
